@@ -1,0 +1,21 @@
+[package]
+name = "rust_util"
+version = "0.1.0"
+authors = ["Jake Curran <jake@jakecurran.com>"]
+edition = "2021"
+publish = false
+description = "Util package to enable Rust code as part of a Python application."
+readme = "README.md"
+
+[lib]
+name = "rust_util"
+crate-type = ["cdylib"]
+
+[dependencies]
+cpython = { version = "0.7", features = ["extension-module"] }
+
+[dependencies.logic]
+path = "../logic"
+
+[profile.release]
+lto = true
